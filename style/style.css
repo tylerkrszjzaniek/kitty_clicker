@@ -1,0 +1,64 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#mainkitty {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-left: 40%;
+  width: 10%;
+  background-color: black;
+}
+
+
+#container {
+  background-color: wheat;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-left: 2%;
+  margin-top: -100%;
+  font-size: 6em;
+  width: 10%;
+  z-index: 2;
+}
+
+
+#input {
+  border: none;
+  box-sizing: content-box;
+}
+
+#buttongrid {
+  display: inline-grid;
+  background-color: lightblue;
+  grid-gap: 3px;
+  grid-template-columns: auto auto;
+  padding: 3px;
+  margin-left: 75%;
+  margin-bottom: 70%;
+  margin-top: 0%;
+  z-index: 1;
+}
+
+.griditem {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+
+}
+
+
+/* loading bars */
+
+#scratchBar {
+  width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
