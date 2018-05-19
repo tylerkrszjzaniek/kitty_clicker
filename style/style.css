@@ -1,16 +1,23 @@
 h1 {
   display: flex;
   justify-content: center;
+
+}
+
+body {
+  font-family: helvetica;
 }
 
 #mainkitty {
   display: flex;
   align-content: center;
   justify-content: center;
-  margin-top: 0;
+  margin-top: 20%;
   margin-left: 40%;
   width: 10%;
   background-color: black;
+  z-index: 1;
+  position: fixed;
 }
 
 
@@ -35,13 +42,13 @@ h1 {
 #buttongrid {
   display: inline-grid;
   background-color: lightblue;
-  grid-gap: 3px;
+  grid-gap: 2px;
   grid-template-columns: auto auto;
-  padding: 3px;
   margin-left: 75%;
   margin-bottom: 70%;
   margin-top: 0%;
   z-index: 1;
+  font-family: helvetica;
 }
 
 .griditem {
@@ -51,13 +58,25 @@ h1 {
 
 }
 
+#numberbox {
+  font-family: helvetica;
+}
 
 /* loading bars */
 
 #scratchBar {
   width: 10%;
     height: 30px;
-    background-color: #4CAF50;
+    background-color: lightgreen;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
+
+#catnipBar {
+  width: 10%;
+    height: 30px;
+    background-color: lightgreen;
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     color: white;
