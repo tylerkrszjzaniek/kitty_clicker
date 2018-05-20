@@ -138,3 +138,33 @@ cursor: pointer;
 .removegridborder {
   border: none;
 }
+
+@media only screen and (max-width: 736px) {
+    #buttongrid{
+      position: fixed;
+      margin-left: 0%;
+      width: 100vw;
+
+    }
+
+    #numberbox {
+      margin-top: 125%;
+      width: 100%;
+      font-size: 2.6em;
+    }
+
+    #mainkitty {
+      padding-left: 80%;
+      padding-top: 40%;
+
+    }
+
+    h1 {
+      font-size: 2.1em;
+      padding-bottom: -50%;
+    }
+
+    .griditem {
+      font-size: 1.1em;
+    }
+}
