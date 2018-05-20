@@ -86,15 +86,14 @@ body {
 
 
 #mainkitty {
-  margin-top: 6%;
+  margin-top: 0%;
   margin-left: 25%;
-/* loading bars */
 z-index: 1;
 background-image: url("/assets/grizabela.jpg");
 cursor: pointer;
 }
 
-
+/* loading bars */
 #scratchBar {
   width: 10%;
     height: 30px;
@@ -139,7 +138,7 @@ cursor: pointer;
   border: none;
 }
 
-@media only screen and (max-width: 736px) {
+@media only screen and (max-width: 414px) {
     #buttongrid{
       position: fixed;
       margin-left: 0%;
@@ -161,7 +160,7 @@ cursor: pointer;
 
     h1 {
       font-size: 2.1em;
-      padding-bottom: -50%;
+      
     }
 
     .griditem {
