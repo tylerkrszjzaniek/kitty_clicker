@@ -26,9 +26,9 @@ body {
   display: flex;
   align-content: center;
   justify-content: center;
-  margin-left: 2%;
-  margin-top: -100%;
-  font-size: 6em;
+  margin-left: 5%;
+  margin-top: -120%;
+  font-size: 3em;
   width: 10%;
   z-index: 2;
 }
@@ -74,6 +74,24 @@ body {
 }
 
 #catnipBar {
+  width: 10%;
+    height: 30px;
+    background-color: lightgreen;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
+
+#yarnballBar {
+  width: 10%;
+    height: 30px;
+    background-color: lightgreen;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
+
+#laserBar {
   width: 10%;
     height: 30px;
     background-color: lightgreen;
