@@ -184,7 +184,7 @@ text-align: center;
       background-color: none;
       border: 1px solid black;
     }
-}
+
 
 #grid8{
   display: none;
@@ -204,4 +204,5 @@ text-align: center;
 
 #grid15 {
   display: none
+}
 }
