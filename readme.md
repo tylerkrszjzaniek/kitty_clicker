@@ -12,7 +12,7 @@ Welcome to my second independent project! Kitty Clicker is a simple game where t
 
 + Cat-themed
 
-##### v 0.5 Updates:
+##### v 0.6 Updates:
 Currently only three of the eight buttons are working
   + 5/18: Added Catnip
   + 5/19: Project enters Beta!
@@ -23,6 +23,9 @@ Currently only three of the eight buttons are working
       + Added Kitty Tower
       + Added Lucky Neko
       + All buttons completed!
+      + More visual assets Added
+      + styling adjustments
+      + font library added
 ###### Future Updates:
 
 

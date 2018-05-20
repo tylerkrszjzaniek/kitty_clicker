@@ -39,7 +39,7 @@ document.querySelector( "#buy-paw" ).addEventListener( "click",
             var x = paws + 1;
 
             document.querySelector( "#paw-count" ).textContent = paws; // updates number of paws in grid
-            document.querySelector( "#paw-count2" ).textContent =  "+ " +  x; // adjusts number of kitties per click per paw count
+            document.querySelector( "#paw-count2" ).textContent =  "+ " +  x + " kitties per click"; // adjusts number of kitties per click per paw count
             document.querySelector( "#paw-cost" ).textContent = "Cost: " + pawCost; // updates pawcost
             document.querySelector( "#numberbox" ).textContent = kitties; // updates kitty count
         }
@@ -47,7 +47,7 @@ document.querySelector( "#buy-paw" ).addEventListener( "click",
 
         document.getElementById( "paw-cost" ).textContent = "Cost: " + nextPawCost;  // updates pawcost
         if( mice >= 1 ){ // updates paw total based on mice multiplier
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ); // updates paw value by mouse multiplier
+            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ) + " kitties per click"; // updates paw value by mouse multiplier
         }
     }
 
@@ -162,7 +162,7 @@ document.querySelector( "#buy-mouse" ).addEventListener( "click", // mouses mult
 
 
             document.querySelector( "#mouse-count1" ).textContent = "Rubber Mice: " + mice; // updates number of mice in grid
-            document.querySelector( "#mouse-count2" ).textContent =  "x " + ( mice * 100 ); // adjusts number of kitties per click per paw count times mouse multiplier
+            document.querySelector( "#mouse-count2" ).textContent =  "x " + ( mice * 100 ) ; // adjusts number of kitties per click per paw count times mouse multiplier
             document.querySelector( "#mouse-cost" ).textContent = "Cost: " + mouseCost; // updates mousecost
             document.querySelector( "#numberbox" ).textContent = kitties; // updates kitty count
         }
@@ -170,7 +170,7 @@ document.querySelector( "#buy-mouse" ).addEventListener( "click", // mouses mult
 
         document.getElementById( "mouse-cost" ).textContent = "Cost: " + nextMouseCost;  // updates mousecast
         if( mice >= 1 ){
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ); // updates paw value by mouse multiplier
+            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ) + " kitties per click"; // updates paw value by mouse multiplier
         }
     }
 
@@ -205,7 +205,7 @@ document.querySelector( "#buy-tower" ).addEventListener( "click", // towers mult
 
 document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies total values of each button
     function buyNeko(){
-        var nekoCost = Math.floor( 1000000 * Math.pow( 2, nekos ) ); // updates cost of future neko purchase
+        var nekoCost = Math.floor( 10000000 * Math.pow( 3, nekos ) ); // updates cost of future neko purchase
 
 
         if( kitties >= nekoCost ){ // checks if user can afford to buy a neko
@@ -218,7 +218,7 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
             document.querySelector( "#neko-cost" ).textContent = "Cost: " + nekoCost; // updates nekocost
             document.querySelector( "#numberbox" ).textContent = kitties; // updates kitty count
         }
-        var nextNekoCost = Math.floor( 1000000 * Math.pow( 2, nekos ) );       // updates cost of next neko
+        var nextNekoCost = Math.floor( 10000000 * Math.pow( 3, nekos ) );       // updates cost of next neko
 
         document.getElementById( "neko-cost" ).textContent = "Cost: " + nextNekoCost;  // updates nekocost
 
@@ -226,7 +226,7 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
         if( nekos >= 1 ){ // multiplied values based on nekos starting with x2
             paws *= 2 + ( nekos - 1 );
             document.querySelector( "#paw-count" ).textContent = paws;
-            document.querySelector( "#paw-count2" ).textContent =  "+ " +  paws;
+            document.querySelector( "#paw-count2" ).textContent =  "+ " +  paws + " kitties per click";
 
             scratches *= 2 + ( nekos - 1 );
             document.querySelector( "#scratch-post-count" ).textContent = "Scratching Posts: " + scratches;
@@ -246,7 +246,7 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
 
             mice *= 2 + ( nekos - 1 );
             document.querySelector( "#mouse-count1" ).textContent = "Rubber Mice: " + mice;
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 10 ) );
+            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 10 ) ) + " kitties per click";
 
             towers *= 2 + ( nekos - 1 );
             document.querySelector( "#tower-count1" ).textContent = "Kitty Towers: " + towers;
