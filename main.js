@@ -223,7 +223,7 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
         document.getElementById( "neko-cost" ).textContent = "Cost: " + nextNekoCost;  // updates nekocost
 
 
-        if( nekos >= 1 ){ // multiplied values based on nekos starting with x2
+        if( nekos > 0 ){ // multiplied values based on nekos starting with x2
             paws *= 2 + ( nekos - 1 );
             document.querySelector( "#paw-count" ).textContent = paws;
             document.querySelector( "#paw-count2" ).textContent =  "+ " +  paws + " kitties per click";
