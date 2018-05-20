@@ -79,9 +79,6 @@ body {
 #numberbox { /* where number is displayed */
   font-family: helvetica;
   background-color: wheat;
-  display: inline-block;
-  align-content: center;
-  justify-content: center;
   margin-left: 0%;
   margin-top: 25%;
   font-size: 2em;
@@ -154,6 +151,7 @@ body {
       grid-template-rows: auto auto;
       border: 1px;
       margin-left: 53%;
+      height: 75%
     }
 
 #titlebox{
