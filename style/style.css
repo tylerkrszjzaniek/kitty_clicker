@@ -146,14 +146,14 @@ body {
 @media only screen and (max-width: 415px) {
     #buttongrid{
       position: fixed;
-      margin-left: 0%;
-      width: 50%;
+      width: 45%;
       font-size: 1vw;
-      margin-top: -35%;
+      margin-top: -40%;
       background: none;
       grid-template-columns: auto auto;
       grid-template-rows: auto auto;
       border: 1px;
+      margin-left: 53%;
     }
 
 #titlebox{
@@ -162,7 +162,6 @@ body {
   margin-top: 1%;
   font-size: 5vw;
 text-align: center;
-margin-left: 50%;
 }
 
 #titlebox img {
@@ -170,14 +169,14 @@ margin-left: 50%;
   padding-left: 5%;
 }
     #numberbox {
-      margin-top: 75%;
+      margin-top: 90%;
       width: 100%;
       font-size: 1.2em;
     }
 
     #mainkitty {
       position: fixed;
-      margin-left: 25%;
+      margin-left: -25%;
     }
 
 
