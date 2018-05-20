@@ -230,7 +230,7 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
 
             scratches *= 2 + ( nekos - 1 );
             document.querySelector( "#scratch-post-count" ).textContent = "Scratching Posts: " + scratches;
-            document.getElementById( "scratch-count" ).textContent = "+" + scratches;
+            document.getElementById( "scratch-count" ).textContent = "+" + scratches * ( towers * 100 );
 
             catnips *= 2 + ( nekos - 1 );
             document.querySelector( "#catnip-post-count" ).textContent = "Catnips: " + catnips;
