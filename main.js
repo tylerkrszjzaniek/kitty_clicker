@@ -12,7 +12,22 @@ var laserInterval = setInterval( laserIncreaseOneHundredThousandPerThirtySec, 30
 var mice = 0;
 var towers = 0;
 var nekos = 0;
+var clickCount = 0; // stores total number of clicks made on main kitty
 var clickgen = paws + 1; // this displayes the + number above the main kitty clicked
+var achievementStatus = false;
+
+// Achievements in progress
+
+// document.querySelector( "#mainclick" ).addEventListener( "click",
+//     function clickCounter(){
+//         clickCount++;
+//         if( clickCount >= 1 ){
+//             document.getElementById( "shades" ).style.display = "block";
+//             document.getElementById( "notification-achievement" ).textContent = "ACHIEVEMENT UNLOCKED" ;
+//         }
+//     }
+//
+// );
 
 
 document.querySelector( "#mainclick" ).addEventListener( "click", // increases kitties per click
@@ -39,15 +54,17 @@ document.querySelector( "#buy-paw" ).addEventListener( "click",
             var x = paws + 1;
 
             document.querySelector( "#paw-count" ).textContent = paws; // updates number of paws in grid
-            document.querySelector( "#paw-count2" ).textContent =  "+ " +  x + " kitties per click"; // adjusts number of kitties per click per paw count
+            document.querySelector( "#paw-count2" ).textContent =  "+ " +  x; // adjusts number of kitties per click per paw count
             document.querySelector( "#paw-cost" ).textContent = "Cost: " + pawCost; // updates pawcost
             document.querySelector( "#numberbox" ).textContent = kitties; // updates kitty count
         }
+
+
         var nextPawCost = Math.floor( 15 * Math.pow( 1.1,paws ) );       // updates cost of next paw
 
         document.getElementById( "paw-cost" ).textContent = "Cost: " + nextPawCost;  // updates pawcost
         if( mice >= 1 ){ // updates paw total based on mice multiplier
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ) + " kitties per click"; // updates paw value by mouse multiplier
+            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ); // updates paw value by mouse multiplier
         }
     }
 
@@ -97,6 +114,10 @@ document.querySelector( "#buy-catnip" ).addEventListener( "click", // catnip but
         var nextCatnipCost = Math.floor( 100 * Math.pow( 1.1, catnips ) ); // updated next kitty cost
 
         document.querySelector( "#catnip-cost" ).textContent = "Cost: " + nextCatnipCost; // displays next kitty cost
+        if( towers > 0 ){
+            document.querySelector( "#catnip-count" ).textContent =  "+ " + ( catnips * 100 ) * ( towers * 100 ); // updates scratching post value by tower multiplier
+        }
+
         if( catnips === 1 ){
             moveCatnip(); // activates load bar on first purchase
         }
@@ -130,7 +151,7 @@ document.querySelector( "#buy-yarnball" ).addEventListener( "click", // yarnball
 
 document.querySelector( "#buy-laser" ).addEventListener( "click", // laser button and buy feature
     function buyLaser(){
-        var laserCost = Math.floor( 50000 * Math.pow( 1.4, lasers ) ); // laser cost
+        var laserCost = Math.floor( 50000 * Math.pow( 1.5, lasers ) ); // laser cost
 
         if( kitties >= laserCost ){ // checks if user can addord laser
             lasers++;
@@ -138,10 +159,10 @@ document.querySelector( "#buy-laser" ).addEventListener( "click", // laser butto
 
             document.querySelector( "#laser-count2" ).textContent = "Laser Pointers: " + lasers; // updates total laser amount
             document.querySelector( "#laser-cost" ).textContent = "Cost: " + laserCost; // displays laser cost
-            document.getElementById( "laser-count" ).textContent = "+ " + ( 50000 * lasers ); // updates how many kitties gained per five seconds
+            document.getElementById( "laser-count" ).textContent = "+ " + Math.floor( 100000 * Math.pow( 1.4, lasers ) ); // updates how many kitties gained per thirty seconds
             document.querySelector( "#numberbox" ).textContent = kitties; // updates kitty count
         }
-        var nextLaserCost = Math.floor( 50000 * Math.pow( 1.4, lasers ) ); // updated next kitty cost
+        var nextLaserCost = Math.floor( 50000 * Math.pow( 1.5, lasers ) ); // updated next kitty cost
 
         document.querySelector( "#laser-cost" ).textContent = "Cost: " + nextLaserCost; // displays next kitty cost
         if( lasers === 1 ){
@@ -170,7 +191,7 @@ document.querySelector( "#buy-mouse" ).addEventListener( "click", // mouses mult
 
         document.getElementById( "mouse-cost" ).textContent = "Cost: " + nextMouseCost;  // updates mousecast
         if( mice >= 1 ){
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ) + " kitties per click"; // updates paw value by mouse multiplier
+            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ); // updates paw value by mouse multiplier
         }
     }
 
@@ -195,21 +216,50 @@ document.querySelector( "#buy-tower" ).addEventListener( "click", // towers mult
         var nextTowerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) );       // updates cost of next tower
 
         document.getElementById( "tower-cost" ).textContent = "Cost: " + nextTowerCost;  // updates towercost
-        if( towers >= 1 ){
+        if( towers > 0 ){
+            document.querySelector( "#catnip-count" ).textContent =  "+ " + ( catnips * 100 ) * ( towers * 100 ); //
             document.querySelector( "#scratch-count" ).textContent =  "+ " + ( scratches * ( towers * 100 ) ); // updates scratching post value by tower multiplier
         }
     }
-
 
 );
 
 document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies total values of each button
     function buyNeko(){
-        var nekoCost = Math.floor( 10000000 * Math.pow( 3, nekos ) ); // updates cost of future neko purchase
+        var nekoCost = Math.floor( 100000000 * Math.pow( 3, nekos ) ); // updates cost of future neko purchase
 
 
         if( kitties >= nekoCost ){ // checks if user can afford to buy a neko
             nekos++;
+            paws *= 2 + ( nekos - 1 );
+            document.querySelector( "#paw-count" ).textContent = paws;
+            document.querySelector( "#paw-count2" ).textContent =  "+ " +  paws;
+
+            scratches *= 2 + ( nekos - 1 );
+            document.querySelector( "#scratch-post-count" ).textContent = "Scratching Posts: " + scratches;
+            document.getElementById( "scratch-count" ).textContent = "+" + scratches * ( towers * 100 );
+
+            catnips *= 2 + ( nekos - 1 );
+            document.querySelector( "#catnip-post-count" ).textContent = "Catnips: " + catnips;
+            document.getElementById( "catnip-count" ).textContent = "+ " + ( 100 * catnips ) * ( 100 * towers );
+
+            yarnballs *= 2 + ( nekos - 1 );
+            document.querySelector( "#yarnball-count2" ).textContent = "Balls of Yarn: " + yarnballs;
+            document.getElementById( "yarnball-count" ).textContent = "+ " + ( 5000 * yarnballs );
+
+            lasers *= 2 + ( nekos - 1 );
+            document.querySelector( "#laser-count2" ).textContent = "Laser Pointers: " + lasers;
+            document.getElementById( "laser-count" ).textContent = "+ " + ( 100000 * lasers );
+
+            mice *= 2 + ( nekos - 1 );
+            document.querySelector( "#mouse-count1" ).textContent = "Rubber Mice: " + mice;
+            document.querySelector( "#mouse-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) );
+
+            towers *= 2 + ( nekos - 1 );
+            document.querySelector( "#tower-count1" ).textContent = "Kitty Towers: " + towers;
+            document.querySelector( "#tower-count2" ).textContent =  "x " + towers * 100;
+
+
             kitties -= nekoCost; // subtracts nekocost from kitty total
 
 
@@ -218,40 +268,9 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
             document.querySelector( "#neko-cost" ).textContent = "Cost: " + nekoCost; // updates nekocost
             document.querySelector( "#numberbox" ).textContent = kitties; // updates kitty count
         }
-        var nextNekoCost = Math.floor( 10000000 * Math.pow( 3, nekos ) );       // updates cost of next neko
+        var nextNekoCost = Math.floor( 100000000 * Math.pow( 3, nekos ) );       // updates cost of next neko
 
         document.getElementById( "neko-cost" ).textContent = "Cost: " + nextNekoCost;  // updates nekocost
-
-
-        if( nekos > 0 ){ // multiplied values based on nekos starting with x2
-            paws *= 2 + ( nekos - 1 );
-            document.querySelector( "#paw-count" ).textContent = paws;
-            document.querySelector( "#paw-count2" ).textContent =  "+ " +  paws + " kitties per click";
-
-            scratches *= 2 + ( nekos - 1 );
-            document.querySelector( "#scratch-post-count" ).textContent = "Scratching Posts: " + scratches;
-            document.getElementById( "scratch-count" ).textContent = "+" + scratches * ( towers * 100 );
-
-            catnips *= 2 + ( nekos - 1 );
-            document.querySelector( "#catnip-post-count" ).textContent = "Catnips: " + catnips;
-            document.getElementById( "catnip-count" ).textContent = "+ " + ( 100 * catnips );
-
-            yarnballs *= 2 + ( nekos - 1 );
-            document.querySelector( "#yarnball-count2" ).textContent = "Balls of Yarn: " + yarnballs;
-            document.getElementById( "yarnball-count" ).textContent = "+ " + ( 5000 * yarnballs );
-
-            lasers *= 2 + ( nekos - 1 );
-            document.querySelector( "#laser-count2" ).textContent = "Laser Pointers: " + lasers;
-            document.getElementById( "laser-count" ).textContent = "+ " + ( 50000 * lasers );
-
-            mice *= 2 + ( nekos - 1 );
-            document.querySelector( "#mouse-count1" ).textContent = "Rubber Mice: " + mice;
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 10 ) ) + " kitties per click";
-
-            towers *= 2 + ( nekos - 1 );
-            document.querySelector( "#tower-count1" ).textContent = "Kitty Towers: " + towers;
-            document.querySelector( "#tower-count2" ).textContent =  "x " + towers * 100;
-        }
     }
 );
 
@@ -270,6 +289,9 @@ function catnipIncreaseOneHundredPerFiveSec(){ // function for increasing kittie
         document.getElementById( "numberbox" ).textContent = kitties += ( catnips * 100 ); // 100 kitties * catnips per 5 seconds
         moveCatnip(); // loading bar
     }
+    if( towers > 0 ){
+        document.getElementById( "numberbox" ).textContent = kitties += ( catnips * 100 ) * ( towers * 100 ); // tower multiplier
+    }
 }
 
 function yarnballIncreaseTenThousandPerTenSec(){ // function for increasing kitties every 10 seconds - interval is displayed at yop
@@ -281,7 +303,7 @@ function yarnballIncreaseTenThousandPerTenSec(){ // function for increasing kitt
 
 function laserIncreaseOneHundredThousandPerThirtySec(){
     if( lasers > 0 ){
-        document.getElementById( "numberbox" ).textContent = kitties += ( lasers * 50000 ); // 50000 kitties * lasers per 30 seconds
+        document.getElementById( "numberbox" ).textContent = kitties += Math.floor( 100000 * Math.pow( 1.5, lasers ) ); // 50000 kitties * lasers per 30 seconds
         moveLaser(); // loading bar
     }
 }
@@ -355,3 +377,21 @@ function moveLaser(){
         }
     }
 }
+
+// function moveAchievement(){ // catnip loading bar
+//     var elem = document.getElementById( "notification-achievement" ); // catnip load bar
+//     var width = 1; // set to five seconds
+//     var id = setInterval( frame, 50 ); // five second timer
+//
+//     function frame(){
+//         if( width >= 1000 ){
+//             clearInterval( id );
+//             elem.style.display = "none";
+//         }
+//         else{
+//             width++;
+//             elem.style.width = width;
+//             elem.innerHTML = "ACHIEVEMENT UNLOCKED";
+//         }
+//     }
+// }

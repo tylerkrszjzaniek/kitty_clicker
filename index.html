@@ -7,26 +7,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chicagoflf" type="text/css"/>
   <link rel="stylesheet" href="/style/style.css">
-  <title>Clicker!</title>
+  <title>SUPER KITTY CLICKER</title>
 </head>
 <body>
   <div id="titlebox">
   <img src="/assets/super.gif">
   <h1> KITTY CLICKER </h1>
 </div>
+  <div id="achievements">
+    <div id="notification-achievement">
+    </div>
+      <div>
+    <div id= "kittyaccessories">
+        <!-- <img src='/assets/shades.png' id='shades'> -->
+    </div>
     <div id="mainkitty">
       <img src ="/assets/grizabela.jpg" type="button" id="mainclick" width="500px" height="300px">
     </div>
-
+  </div>
   <div id="buttongrid">
       <div class="griditem" id="buy-paw">
         Paws
           <br>
         <img src="/assets/paw.jpg" type="button" name="increase by 1" >
         <br>
-          <div id="paw-count2"> + 1 kitties per click</div>
+          <div id="paw-count2" class="valuehighlight"> + 1 </div> kitties per click
           <br>
-
+<br>
           <div id="paw-cost" class="costhighlight"> Cost: 15</div>
                 <br>
           Paws: <div id="paw-count">  0 </div>
@@ -39,7 +46,7 @@
         <img src="assets/scratchingpost.jpg" type="button"  name="increase by 1 ea sec">
 
                       <br>
-          <div id="scratch-count">+ 1</div> kitties per second
+          <div id="scratch-count" class="valuehighlight">+ 1</div> kitties per second
           <br>
             <br>
           <div id="scratch-cost" class="costhighlight"> Cost: 25 </div>
@@ -51,7 +58,7 @@
         Catnip
         <br>
           <img src="/assets/catnip.jpg" type="button"  name ="increase by 100 every 5 sec">
-            <div id="catnip-count">+ 100</div> kitties every 5 seconds
+            <div id="catnip-count" class="valuehighlight">+ 100</div> kitties every 5 seconds
             <br>
             <br>
             <div id="catnip-cost" class="costhighlight"> Cost: 100 </div>
@@ -62,7 +69,7 @@
       <div class="griditem" id="buy-yarnball">
         Ball of Yarn
         <img src="/assets/yarnball.jpg" type="button"  name="increase by 10000 every 10 sec">
-            <div id="yarnball-count">+ 5000</div> kitties every 10 seconds
+            <div id="yarnball-count" class="valuehighlight">+ 5000</div> kitties every 10 seconds
             <br>
             <br>
             <div id="yarnball-cost" class="costhighlight"> Cost: 1000 </div>
@@ -70,11 +77,11 @@
             <div id="yarnball-count2"> Balls of Yarn: 0 </div>
       </div>
 
-<div  id="grid5" class="removegridborder"></div>
+<div id="grid5" class="removegridborder"></div>
 
     <div class ="grid item" id="grid6" name="scratch loadbar">
-        <div id="scratchProgress">
-           <div id="scratchBar"></div>
+        <div>
+           <div ></div>
         </div>
     </div>
   <div class ="grid item" id="grid7" name="catnip loadbar">
@@ -92,7 +99,7 @@
     <div class="griditem" id="buy-mouse">
       Rubber Mouse
         <img src="/assets/mouse.jpg" name="quintuples paw value" type="button" >
-         <div id="mouse-count2"> x 100</div> paw multiplier
+         <div id="mouse-count2" class="valuehighlight"> x 100</div> Paw multiplier
          <br>
          <br>
          <div id="mouse-cost" class="costhighlight"> Cost: 100000 </div>
@@ -105,7 +112,9 @@
     <div class="griditem" id="buy-tower">
      Kitty Tower
         <img src="/assets/tower.jpg" type="button" name="multiply scratching post X 100" >
-           <div id="tower-count2"> x 100</div> Scratching Post Multiplier
+           <div id="tower-count2" class="valuehighlight"> x 100</div> Scratching Post &
+<br>
+           Catnip multiplier
            <br>
            <br>
            <div id="tower-cost" class="costhighlight"> Cost: 500000 </div>
@@ -116,7 +125,7 @@
     <div class="griditem" id="buy-laser">
       Laser Pointer
         <img src="/assets/laserpointer.jpg" name=" something" type="button" >
-          <div id="laser-count">+ 50000</div> kitties every 30 seconds
+          <div id="laser-count" class="valuehighlight">+ 100000</div> kitties every 30 seconds
           <br>
           <br>
             <div id="laser-cost" class="costhighlight"> Cost: 50000 </div>
@@ -129,10 +138,10 @@
       <br>
         <img src="/assets/luckyneko.jpg" type="button" name="Doubles everything" >
           <br>
-         <div id="neko-count2"> x 2</div> Total Multiplier
+         <div id="neko-count2" class="valuehighlight"> x 2</div> Total Multiplier
          <br>
          <br>
-         <div id="neko-cost" class="costhighlight"> Cost: 10000000 </div>
+         <div id="neko-cost" class="costhighlight"> Cost: 100000000 </div>
          <br>
          <div id="neko-count1"> Lucky Nekos: 0 </div>
     </div>
