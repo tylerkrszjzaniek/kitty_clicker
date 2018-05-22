@@ -58,7 +58,7 @@ document.querySelector( "#buy-paw" ).addEventListener( "click",
             document.querySelector( "#paw-cost" ).textContent = "Cost: " + ( pawCost ).toLocaleString( "en" ); // updates pawcost
             document.querySelector( "#numberbox" ).textContent = ( kitties ).toLocaleString( "en" ); // updates kitty count
         }
-        
+
         var nextPawCost = Math.floor( 15 * Math.pow( 1.1,paws ) );       // updates cost of next paw
 
         document.getElementById( "paw-cost" ).textContent = "Cost: " + ( nextPawCost ).toLocaleString( "en" );  // updates pawcost
@@ -275,7 +275,7 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
 
 function scratchIncreaseOnePerSec(){ // function for increasing kitties once per second with scratching post - interval is displayed at top
     if( scratches > 0 ){
-        document.getElementById( "numberbox" ).textContent = ( kitties += scratches ).toLocaleString( "en" ) ; // 1 kitty per sec
+        document.getElementById( "numberbox" ).textContent =  kitties +=  scratches; // 1 kitty per sec
         moveScratch(); // loading bar
     }
     if( towers > 0 ){
