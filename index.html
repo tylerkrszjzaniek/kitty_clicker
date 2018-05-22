@@ -10,9 +10,29 @@
   <title>SUPER KITTY CLICKER</title>
 </head>
 <body>
-  <div id="titlebox">
-  <img src="/assets/super.gif">
-  <h1> KITTY CLICKER </h1>
+  <div id="menudisplay">
+    howdy folks welcome to the menu
+      <div id="kittypreview"></div>
+      <div id="backgroundpreview"></div>
+        <div id="leftarrows">
+          <div id="leftarrowcat"> </div>
+          <div id="leftarrowbg"></div>
+        </div>
+          <div id="rightarrows">
+            <div id="rightarrowcat"></div>
+            <div id="rightarrowbg"></div>
+            </div>
+  <div id="menutext">
+      <h2> SELECT A CAT </h2>
+      <h2> SELECT A BACKGROUND </h2>
+  </div>
+  </div>
+    <div id="titlebox">
+        <img src="/assets/super.gif">
+        <h1> KITTY CLICKER </h1>
+    </div>
+<div id="menubar" >
+  <div id="mainmenubutton" >MENU</div>
 </div>
   <div id="achievements">
     <div id="notification-achievement">
@@ -21,15 +41,15 @@
     <div id= "kittyaccessories">
         <!-- <img src='/assets/shades.png' id='shades'> -->
     </div>
-    <div id="mainkitty">
-      <img src ="/assets/grizabela.jpg" type="button" id="mainclick" width="500px" height="300px">
+    <div id="mainkitty" >
+      <img src ="/assets/grizabela.jpg" id="mainclick" width="500px" height="300px">
     </div>
   </div>
-  <div id="buttongrid">
+    <div id="buttongrid">
       <div class="griditem" id="buy-paw">
         Paws
           <br>
-        <img src="/assets/paw.jpg" type="button" name="increase by 1" >
+        <img src="/assets/paw.jpg" name="increase by 1" >
         <br>
           <div id="paw-count2" class="valuehighlight"> + 1 </div> kitties per click
           <br>
@@ -43,7 +63,7 @@
 
       <div class="griditem" id="buy-scratch">
         Scratching Posts
-        <img src="assets/scratchingpost.jpg" type="button"  name="increase by 1 ea sec">
+        <img src="assets/scratchingpost.jpg"  name="increase by 1 ea sec">
 
                       <br>
           <div id="scratch-count" class="valuehighlight">+ 1</div> kitties per second
@@ -57,7 +77,7 @@
       <div class="griditem" id="buy-catnip">
         Catnip
         <br>
-          <img src="/assets/catnip.jpg" type="button"  name ="increase by 100 every 5 sec">
+          <img src="/assets/catnip.jpg"  name ="increase by 100 every 5 sec">
             <div id="catnip-count" class="valuehighlight">+ 100</div> kitties every 5 seconds
             <br>
             <br>
@@ -68,11 +88,11 @@
 
       <div class="griditem" id="buy-yarnball">
         Ball of Yarn
-        <img src="/assets/yarnball.jpg" type="button"  name="increase by 10000 every 10 sec">
+        <img src="/assets/yarnball.jpg"  name="increase by 10000 every 10 sec">
             <div id="yarnball-count" class="valuehighlight">+ 5000</div> kitties every 10 seconds
             <br>
             <br>
-            <div id="yarnball-cost" class="costhighlight"> Cost: 1000 </div>
+            <div id="yarnball-cost" class="costhighlight"> Cost: 1,000 </div>
             <br>
             <div id="yarnball-count2"> Balls of Yarn: 0 </div>
       </div>
@@ -80,8 +100,8 @@
 <div id="grid5" class="removegridborder"></div>
 
     <div class ="grid item" id="grid6" name="scratch loadbar">
-        <div>
-           <div ></div>
+        <div id='scratchProgress'>
+           <div id="scratchBar"></div>
         </div>
     </div>
   <div class ="grid item" id="grid7" name="catnip loadbar">
@@ -98,11 +118,11 @@
 
     <div class="griditem" id="buy-mouse">
       Rubber Mouse
-        <img src="/assets/mouse.jpg" name="quintuples paw value" type="button" >
+        <img src="/assets/mouse.jpg" name="quintuples paw value">
          <div id="mouse-count2" class="valuehighlight"> x 100</div> Paw multiplier
          <br>
          <br>
-         <div id="mouse-cost" class="costhighlight"> Cost: 100000 </div>
+         <div id="mouse-cost" class="costhighlight"> Cost: 100,000 </div>
          <br>
          <div id="mouse-count1"> Rubber Mice: 0 </div>
     </div>
@@ -111,24 +131,24 @@
 
     <div class="griditem" id="buy-tower">
      Kitty Tower
-        <img src="/assets/tower.jpg" type="button" name="multiply scratching post X 100" >
+        <img src="/assets/tower.jpg" name="multiply scratching post X 100" >
            <div id="tower-count2" class="valuehighlight"> x 100</div> Scratching Post &
 <br>
            Catnip multiplier
            <br>
            <br>
-           <div id="tower-cost" class="costhighlight"> Cost: 500000 </div>
+           <div id="tower-cost" class="costhighlight"> Cost: 500,000 </div>
            <br>
            <div id="tower-count1"> Kitty Towers: 0 </div>
     </div>
 
     <div class="griditem" id="buy-laser">
       Laser Pointer
-        <img src="/assets/laserpointer.jpg" name=" something" type="button" >
-          <div id="laser-count" class="valuehighlight">+ 100000</div> kitties every 30 seconds
+        <img src="/assets/laserpointer.jpg" name=" something">
+          <div id="laser-count" class="valuehighlight">+ 100,000</div> kitties every 30 seconds
           <br>
           <br>
-            <div id="laser-cost" class="costhighlight"> Cost: 50000 </div>
+            <div id="laser-cost" class="costhighlight"> Cost: 50,000 </div>
             <br>
             <div id="laser-count2"> Laser Pointers: 0 </div>
   </div>
@@ -136,12 +156,12 @@
     <div class="griditem" id="buy-neko">
       Lucky Neko
       <br>
-        <img src="/assets/luckyneko.jpg" type="button" name="Doubles everything" >
+        <img src="/assets/luckyneko.jpg" name="Doubles everything" >
           <br>
          <div id="neko-count2" class="valuehighlight"> x 2</div> Total Multiplier
          <br>
          <br>
-         <div id="neko-cost" class="costhighlight"> Cost: 100000000 </div>
+         <div id="neko-cost" class="costhighlight"> Cost: 100,000,000 </div>
          <br>
          <div id="neko-count1"> Lucky Nekos: 0 </div>
     </div>
@@ -163,8 +183,9 @@
 </div>
 
 
-
-<script src="main.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
+<script src="/js/main.js" charset="utf-8"></script>
+<script src="/js/cats.js" charset="utf-8">
 
 </script>
 </body>

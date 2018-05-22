@@ -12,9 +12,9 @@ Welcome to my second independent project! Kitty Clicker is a simple game where t
 
 + Cat-themed
 
-+ Supported on mobile browsers 
++ Supported on mobile browsers
 
-##### v 0.7 Updates:
+##### v 0.71 Updates:
 Currently only three of the eight buttons are working
   + 5/18: Added Catnip
   + 5/19: Project enters Beta!
@@ -31,6 +31,9 @@ Currently only three of the eight buttons are working
 
   + 5/20:
     + Mobile support added!
+  + 5/21:
+    + Added commas to large numbers
+    + Began working on menu button (disabled on mobile)
 ###### Future Updates:
 
 
@@ -42,8 +45,6 @@ Currently only three of the eight buttons are working
 
 + Bugfixes
   + Fix loadbar bug where it glitches before second instance
-  + Neko multiplier not applying to other buttons unless other buttons clicked
-  + Number bar not displaying until main kitty is clicked
 
 + Balancing
 
