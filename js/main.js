@@ -34,10 +34,10 @@ document.querySelector( "#mainclick" ).addEventListener( "click", // increases k
     function kittyClick( ){
         document.querySelector( "#numberbox" ).textContent = ( kitties++ ).toLocaleString( "en" );
         if( paws > 0 ){ // number of kitties clicked increased by number of paws
-            kitties =  ( kitties++ + paws ).toLocaleString( "en" ) ;
+            kitties =   kitties++ + paws;
         }
         if( mice >= 1 ){
-            kitties = ( kitties++ + paws * ( mice * 100 ) - paws ).toLocaleString( "en" ); // increases kitties clicked based on mouse multiplier
+            kitties = kitties++ + paws * ( mice * 100 ) - paws; // increases kitties clicked based on mouse multiplier
         }
     } );
 
@@ -125,6 +125,7 @@ document.querySelector( "#buy-catnip" ).addEventListener( "click", // catnip but
 
 );
 
+
 document.querySelector( "#buy-yarnball" ).addEventListener( "click", // yarnball button and buy feature
     function buyYarnball(){
         var yarnballCost = Math.floor( 1000 * Math.pow( 1.2, yarnballs ) ); // yarnnball cost
@@ -158,7 +159,7 @@ document.querySelector( "#buy-laser" ).addEventListener( "click", // laser butto
 
             document.querySelector( "#laser-count2" ).textContent = "Laser Pointers: " + lasers; // updates total laser amount
             document.querySelector( "#laser-cost" ).textContent = "Cost: " + ( laserCost ).toLocaleString( "en" ); // displays laser cost
-            document.getElementById( "laser-count" ).textContent = "+ " + Math.floor( 100000 * Math.pow( 1.4, lasers ) ); // updates how many kitties gained per thirty seconds
+            document.getElementById( "laser-count" ).textContent = "+ " + Math.floor( 100000 * Math.pow( 2, lasers ) ); // updates how many kitties gained per thirty seconds
             document.querySelector( "#numberbox" ).textContent = ( kitties ).toLocaleString( "en" ); // updates kitty count
         }
         var nextLaserCost = Math.floor( 50000 * Math.pow( 1.5, lasers ) ); // updated next kitty cost
@@ -190,7 +191,7 @@ document.querySelector( "#buy-mouse" ).addEventListener( "click", // mouses mult
 
         document.getElementById( "mouse-cost" ).textContent = "Cost: " + ( nextMouseCost ).toLocaleString( "en" );  // updates mousecast
         if( mice >= 1 ){
-            document.querySelector( "#paw-count2" ).textContent =  "+ " + ( paws * ( mice * 100 ) ); // updates paw value by mouse multiplier
+            document.querySelector( "#paw-count2" ).textContent =  "+ " +  ( paws * ( mice * 100 ) ) ; // updates paw value by mouse multiplier
         }
     }
 
@@ -274,13 +275,16 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
 );
 
 function scratchIncreaseOnePerSec(){ // function for increasing kitties once per second with scratching post - interval is displayed at top
+    var scratchPlusKitties = kitties += scratches;
+
     if( scratches > 0 ){
-        document.getElementById( "numberbox" ).textContent =  kitties +=  scratches; // 1 kitty per sec
+        document.getElementById( "numberbox" ).textContent =  scratchPlusKitties.toLocaleString( "en" ); // 1 kitty per sec
         moveScratch(); // loading bar
     }
     if( towers > 0 ){
-        document.getElementById( "numberbox" ).textContent = ( kitties += scratches * ( 100 * towers ) - scratches ).toLocaleString( "en" );
+        document.getElementById( "numberbox" ).textContent =    kitties += ( scratches  * ( 100 * towers ) - scratches );
     }
+    document.getElementById( "numberbox" ).textContent = kitties.toLocaleString( "en" );
 }
 
 function catnipIncreaseOneHundredPerFiveSec(){ // function for increasing kitties every five seconds - interval is displayed at top
@@ -289,7 +293,7 @@ function catnipIncreaseOneHundredPerFiveSec(){ // function for increasing kittie
         moveCatnip(); // loading bar
     }
     if( towers > 0 ){
-        document.getElementById( "numberbox" ).textContent = ( kitties += ( catnips * 100 ) * ( towers * 100 ) ).toLocaleString( "en" ); // tower multiplier
+        document.getElementById( "numberbox" ).textContent = ( ( kitties += ( catnips * 100 ) * ( towers * 100 ) ) ).toLocaleString( "en" ); // tower multiplier
     }
 }
 
