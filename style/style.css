@@ -1,7 +1,7 @@
 h1 {
   display: flex;
-  justify-content: left;
-  margin-right: -3%;
+  justify-content: center;
+  margin-right: 5%;
   font-size: 2.1em;
   margin-top: -2%;
   z-index: 5;
@@ -9,9 +9,14 @@ h1 {
 
 body {
   font-family: 'ChicagoFLFRegular',sans-serif;
-
-
-  font-size: 02.vw;;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+  font-size: 1.6vw;
 }
 #mainmenubutton{
   width: 10%;
@@ -25,7 +30,19 @@ body {
   position: fixed;
 
 }
-
+#tester{
+  background-color:white;
+}
+.loadbar {
+    background-color: lightgreen;
+    z-index: 0;
+  margin-left:91%;
+  margin-top: -147%;
+  display: flex;
+  height: 155px;
+  opacity: 0.5;
+  width:10%;
+}
 #menudisplay {
   background-color: black;
   width: 100%;
@@ -130,11 +147,12 @@ width: 50px;
   align-content: center;
   justify-content: center;
   margin-top: 0%;
+
   margin-left: 0%;
-  width: 30%;
+  width: 50%;
   background-color: black;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   cursor: pointer;
 }
 
@@ -175,6 +193,10 @@ width: 50px;
   font-size: 1.2vw;
   color: black;
   background-color: white;
+}
+
+.griditem div {
+  z-index:4;
 }
 
 .griditem img {
@@ -312,6 +334,7 @@ text-align: center;
     #mainkitty {
       position: fixed;
       margin-left: -15%;
+      margin-top: -8%;
     }
 
 
@@ -321,7 +344,6 @@ text-align: center;
       background-color: none;
       border: 1px solid black;
     }
-
 
 #grid8{
   display: none;
@@ -342,4 +364,14 @@ text-align: center;
 #grid15 {
   display: none
 }
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }

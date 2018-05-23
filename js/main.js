@@ -4,16 +4,15 @@ var paws = 0; // number of kitties increased per click
 var scratches = 0; // number of +1/sec scratching post items
 var scratchInterval = setInterval( scratchIncreaseOnePerSec, 1000 ); // sets scratching post interval one kitty per second
 var catnips = 0;
-var catnipInterval = setInterval( catnipIncreaseOneHundredPerFiveSec, 5000 );
+var catnipInterval = setInterval( catnipIncreaseOneHundredPerFiveSec, 5000 ); // catnip interval, 5 seconds
 var yarnballs = 0;
-var yarnballInterval = setInterval( yarnballIncreaseTenThousandPerTenSec, 10000 );
+var yarnballInterval = setInterval( yarnballIncreaseTenThousandPerTenSec, 10000 ); // yarnball interval, 10 seconds
 var lasers = 0;
-var laserInterval = setInterval( laserIncreaseOneHundredThousandPerThirtySec, 30000 );
+var laserInterval = setInterval( laserIncreaseOneHundredThousandPerThirtySec, 30000 ); // laser interval, 30 seconds
 var mice = 0;
 var towers = 0;
 var nekos = 0;
 var clickCount = 0; // stores total number of clicks made on main kitty
-var clickgen = paws + 1; // this displayes the + number above the main kitty clicked
 var achievementStatus = false;
 
 // Achievements in progress
@@ -28,31 +27,31 @@ var achievementStatus = false;
 //     }
 //
 // );
-
-
+// main kity click function
 document.querySelector( "#mainclick" ).addEventListener( "click", // increases kitties per click
     function kittyClick( ){
-        document.querySelector( "#numberbox" ).textContent = ( kitties++ ).toLocaleString( "en" );
+        document.querySelector( "#numberbox" ).textContent = ( kitties++ ).toLocaleString( "en" ); // inserts commas for large numbers
         if( paws > 0 ){ // number of kitties clicked increased by number of paws
-            kitties =   kitties++ + paws;
+            kitties =   kitties++ + paws; // increases kitty count plus value of paws
         }
         if( mice >= 1 ){
-            kitties = kitties++ + paws * ( mice * 100 ) - paws; // increases kitties clicked based on mouse multiplier
+            kitties = kitties++ + paws * ( mice * 100 ) - paws; // increases kitties clicked based on mouse multiplier without adding number of paws to kitty total
         }
     } );
 
 
+// button purchases
 document.querySelector( "#buy-paw" ).addEventListener( "click",
     function buyPaw(){
+        var x = 0;
         var pawCost = Math.floor( 15 * Math.pow( 1.1, paws ) ); // updates cost of future paw purchase
+
 
         if( kitties >= pawCost ){ // checks if user can afford to buy a paw
             paws++;
             kitties -= pawCost; // subtracts pawcost from kitty total
 
-
-            var x = paws + 1;
-
+            x = paws + 1;
             document.querySelector( "#paw-count" ).textContent = paws; // updates number of paws in grid
             document.querySelector( "#paw-count2" ).textContent =  "+ " +  x; // adjusts number of kitties per click per paw count
             document.querySelector( "#paw-cost" ).textContent = "Cost: " + ( pawCost ).toLocaleString( "en" ); // updates pawcost
@@ -136,7 +135,7 @@ document.querySelector( "#buy-yarnball" ).addEventListener( "click", // yarnball
 
             document.querySelector( "#yarnball-count2" ).textContent = "Balls of Yarn: " + yarnballs; // updates total catnip amount
             document.querySelector( "#yarnball-cost" ).textContent = "Cost: " + ( yarnballCost ).toLocaleString( "en" ); // displays catnip cost
-            document.getElementById( "yarnball-count" ).textContent = "+ " + ( 5000 * yarnballs ); // updates how many kitties gained per five seconds
+            document.getElementById( "yarnball-count" ).textContent = "+ " +  ( 5000 * yarnballs ); // updates how many kitties gained per five seconds
             document.querySelector( "#numberbox" ).textContent = ( kitties ).toLocaleString( "en" ); // updates kitty count
         }
         var nextYarnballCost = Math.floor( 1000 * Math.pow( 1.2, yarnballs ) ); // updated next kitty cost
@@ -201,7 +200,7 @@ document.querySelector( "#buy-mouse" ).addEventListener( "click", // mouses mult
 document.querySelector( "#buy-tower" ).addEventListener( "click", // towers multiply scratching post values by 100
     function buyTower(){
         var towerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) ); // updates cost of future tower purchase
-
+        var nextTowerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) ); // updates cost of next tower
 
         if( kitties >= towerCost ){ // checks if user can afford to buy a tower
             towers++;
@@ -213,23 +212,23 @@ document.querySelector( "#buy-tower" ).addEventListener( "click", // towers mult
             document.querySelector( "#tower-cost" ).textContent = "Cost: " + ( towerCost ).toLocaleString( "en" ); // updates towercost
             document.querySelector( "#numberbox" ).textContent = ( kitties ).toLocaleString( "en" ); // updates kitty count
         }
-        var nextTowerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) );       // updates cost of next tower
+
 
         document.getElementById( "tower-cost" ).textContent = "Cost: " + ( nextTowerCost ).toLocaleString( "en" );  // updates towercost
         if( towers > 0 ){
-            document.querySelector( "#catnip-count" ).textContent =  "+ " + ( catnips * 100 ) * ( towers * 100 ); //
+            document.querySelector( "#catnip-count" ).textContent =  "+ " + ( catnips * 100 ) * ( towers * 100 ); // updates catnip value by tower multiplier
             document.querySelector( "#scratch-count" ).textContent =  "+ " + ( scratches * ( towers * 100 ) ); // updates scratching post value by tower multiplier
         }
     }
 
 );
 
-document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies total values of each button
+document.querySelector( "#buy-neko" ).addEventListener( "click", // neko multiplies total values of each button
     function buyNeko(){
-        var nekoCost = Math.floor( 100000000 * Math.pow( 3, nekos ) ); // updates cost of future neko purchase
+        var nekoCost = Math.floor( 100000000 * Math.pow( 5, nekos ) ); // updates cost of future neko purchase
 
-
-        if( kitties >= nekoCost ){ // checks if user can afford to buy a neko
+        // TODO: the neko function doesn't work on first click unless user clicks on each button.
+        if( kitties >= nekoCost ){ // checks if user can afford to buy a neko and then duplicates each button value
             nekos++;
             paws *= 2 + ( nekos - 1 );
             document.querySelector( "#paw-count" ).textContent = paws;
@@ -268,11 +267,13 @@ document.querySelector( "#buy-neko" ).addEventListener( "click", // multiplies t
             document.querySelector( "#neko-cost" ).textContent = "Cost: " + ( nekoCost ).toLocaleString( "en" ); // updates nekocost
             document.querySelector( "#numberbox" ).textContent = ( kitties ).toLocaleString( "en" ); // updates kitty count
         }
-        var nextNekoCost = Math.floor( 100000000 * Math.pow( 3, nekos ) );       // updates cost of next neko
+        var nextNekoCost = Math.floor( 100000000 * Math.pow( 5, nekos ) );       // updates cost of next neko
 
         document.getElementById( "neko-cost" ).textContent = "Cost: " + ( nextNekoCost ).toLocaleString( "en" );  // updates nekocost
     }
 );
+
+// incremental buttons
 
 function scratchIncreaseOnePerSec(){ // function for increasing kitties once per second with scratching post - interval is displayed at top
     var scratchPlusKitties = kitties += scratches;
@@ -299,7 +300,7 @@ function catnipIncreaseOneHundredPerFiveSec(){ // function for increasing kittie
 
 function yarnballIncreaseTenThousandPerTenSec(){ // function for increasing kitties every 10 seconds - interval is displayed at yop
     if( yarnballs > 0 ){
-        document.getElementById( "numberbox" ).textContent = ( kitties += ( yarnballs * 5000 ) ).toLocaleString( "en" ); // 5000 kitties * yarnballs every 10 seconds
+        document.getElementById( "numberbox" ).textContent = ( kitties += Math.floor( 5000 * yarnballs ) ).toLocaleString( "en" ); // 5000 kitties * yarnballs every 10 seconds
         moveYarnball(); // loading bar
     }
 }
@@ -313,6 +314,7 @@ function laserIncreaseOneHundredThousandPerThirtySec(){
 
 
 // loading bars
+// TODO: fix bug with progress bars displaying incorrectly due to being called twice
 function moveScratch(){ // scratching post loading bar
     var elem = document.getElementById( "scratchBar" );
     var width = 1;
@@ -330,7 +332,7 @@ function moveScratch(){ // scratching post loading bar
     }
 }
 
-function moveCatnip(){ // catnip loading bar
+function moveCatnip(){
     var elem = document.getElementById( "catnipBar" ); // catnip load bar
     var width = 1; // set to five seconds
     var id = setInterval( frame, 50 ); // five second timer
@@ -348,7 +350,7 @@ function moveCatnip(){ // catnip loading bar
 }
 
 function moveYarnball(){
-    var elem = document.getElementById( "yarnballBar" ); // yarnball move bar
+    var elem = document.getElementById( "yarnballBar" ); // yarnball progress bar
     var width = 1; // set to ten seconds
     var id = setInterval( frame, 100 ); // ten second timer
 
@@ -365,7 +367,7 @@ function moveYarnball(){
 }
 
 function moveLaser(){
-    var elem = document.getElementById( "laserBar" ); // laser move bar
+    var elem = document.getElementById( "laserBar" ); // laser progres bar
     var width = 1; // set to thirty seconds
     var id = setInterval( frame, 300 ); // thirty second timer
 
@@ -381,24 +383,5 @@ function moveLaser(){
     }
 }
 
-document.getElementById( "numberbox" ).textContent = kitties.toLocaleString( "en" );
-// adds commas to big numbers???
-// document.getElementById( "numberbox" ).textContent = kitties.toLocaleString();
 
-// function moveAchievement(){ // catnip loading bar
-//     var elem = document.getElementById( "notification-achievement" ); // catnip load bar
-//     var width = 1; // set to five seconds
-//     var id = setInterval( frame, 50 ); // five second timer
-//
-//     function frame(){
-//         if( width >= 1000 ){
-//             clearInterval( id );
-//             elem.style.display = "none";
-//         }
-//         else{
-//             width++;
-//             elem.style.width = width;
-//             elem.innerHTML = "ACHIEVEMENT UNLOCKED";
-//         }
-//     }
-// }
+document.getElementById( "numberbox" ).textContent = kitties.toLocaleString( "en" ); // adds commas to large numbers
