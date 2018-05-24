@@ -147,7 +147,6 @@ width: 50px;
   align-content: center;
   justify-content: center;
   margin-top: 7%;
-
   margin-left: 0%;
   width: 75%;
   position: fixed;
@@ -335,7 +334,7 @@ text-align: center;
     #mainkitty {
       position: fixed;
       margin-left: -10%;
-      margin-top: -8%;
+      margin-top: -7%;
     }
 
 
