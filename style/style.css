@@ -18,6 +18,7 @@ body {
                                   supported by Chrome and Opera */
   font-size: 1.6vw;
   background-size: cover;
+  
 }
 
 #achievement-get{
@@ -33,7 +34,7 @@ body {
   background-color: lightgreen;
   text-align: center;
 
-  margin-top: -14%;
+  margin-top: -10%;
   margin-left: 30%;
   z-index: 8;
   position: fixed;
@@ -170,7 +171,7 @@ position: fixed;
 #mainkitty {
   align-content: center;
   justify-content: center;
-  margin-top: 0%;
+  margin-top: 5%;
   margin-left: 0%;
   width: 75%;
   position: fixed;
@@ -275,7 +276,7 @@ position: fixed;
 
 /* loading bars */
 #scratchBar {
-  width: 10%;
+  width: 0;
     height: 30px;
     background-color: #ffbb72;
     text-align: center; /* To center it horizontally (if you want) */
@@ -284,7 +285,7 @@ position: fixed;
 }
 
 #catnipBar {
-  width: 10%;
+  width: 0;
     height: 30px;
     background-color: #fcff7f;
     text-align: center; /* To center it horizontally (if you want) */
@@ -293,7 +294,7 @@ position: fixed;
 }
 
 #yarnballBar {
-  width: 10%;
+  width: 0;
     height: 30px;
     background-color: lightgreen;
     text-align: center; /* To center it horizontally (if you want) */
@@ -302,7 +303,7 @@ position: fixed;
 }
 
 #laserBar {
-  width: 10%;
+  width: 0;
     height: 30px;
     background-color: #f29b85;
     text-align: center; /* To center it horizontally (if you want) */

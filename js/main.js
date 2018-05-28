@@ -317,7 +317,7 @@ function laserIncreaseOneHundredThousandPerThirtySec(){
 // TODO: fix bug with progress bars displaying incorrectly due to being called twice
 function moveScratch(){ // scratching post loading bar
     var elem = document.getElementById( "scratchBar" );
-    var width = 1;
+    var width = 0;
     var id = setInterval( frame, 10 ); // one second timer
 
     function frame(){
@@ -334,7 +334,7 @@ function moveScratch(){ // scratching post loading bar
 
 function moveCatnip(){
     var elem = document.getElementById( "catnipBar" ); // catnip load bar
-    var width = 1; // set to five seconds
+    var width = 0; // set to five seconds
     var id = setInterval( frame, 50 ); // five second timer
 
     function frame(){
@@ -351,7 +351,7 @@ function moveCatnip(){
 
 function moveYarnball(){
     var elem = document.getElementById( "yarnballBar" ); // yarnball progress bar
-    var width = 1; // set to ten seconds
+    var width = 0; // set to ten seconds
     var id = setInterval( frame, 100 ); // ten second timer
 
     function frame(){
@@ -368,7 +368,7 @@ function moveYarnball(){
 
 function moveLaser(){
     var elem = document.getElementById( "laserBar" ); // laser progres bar
-    var width = 1; // set to thirty seconds
+    var width = 0; // set to thirty seconds
     var id = setInterval( frame, 300 ); // thirty second timer
 
     function frame(){
