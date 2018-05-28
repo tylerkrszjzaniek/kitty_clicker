@@ -109,7 +109,7 @@ document.getElementById( "rightarrow" ).addEventListener( "click",
             document.getElementById( "catpreview" ).src = kittyPreviewImages[previewImageValue];
         }
         else{
-            ( previewImageValue = 0 );
+            ( previewImageValue-- );
         }
     }
 );
@@ -121,7 +121,7 @@ document.getElementById( "leftarrow" ).addEventListener( "click",
             document.getElementById( "catpreview" ).src = kittyPreviewImages[previewImageValue];
         }
         else{
-            ( previewImageValue = 0 );
+            ( previewImageValue++ );
         }
     }
 );
@@ -136,7 +136,7 @@ document.getElementById( "rightarrowbg" ).addEventListener( "click",
             document.querySelector( "body" ).style.backgroundImage = "url(" + backgroundImages[previewBgValue - 1] + ")";
         }
         else{
-            ( previewBgValue = 0 );
+            ( previewBgValue-- );
         }
     }
 );
@@ -149,7 +149,7 @@ document.getElementById( "leftarrowbg" ).addEventListener( "click",
             document.querySelector( "body" ).style.backgroundImage = "url(" + backgroundImages[previewBgValue - 1] + ")";
         }
         else{
-            ( previewBgValue = 0 );
+            ( previewBgValue++ );
         }
     }
 );
