@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chicagoflf" type="text/css"/>
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chicagoflf" type="text/css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   <link rel="stylesheet" href="/style/style.css">
   <title>SUPER KITTY CLICKER</title>
 </head>
 <body>
   <div id="menudisplay">
-    click the menu button to exit
-      <div id="kittypreview"></div>
-      <div id="backgroundpreview"></div>
-        <div id="leftarrows">
-          <div id="leftarrowcat"> </div>
-          <div id="leftarrowbg"></div>
-        </div>
-          <div id="rightarrows">
-            <div id="rightarrowcat"></div>
-            <div id="rightarrowbg"></div>
-            </div>
+      <div id="exitbutton"> X </div>
+    <div id = "leftarrowbox"><img src="/assets/rightarrow.png" id="leftarrow" ></div>
+      <div class="unlockSelectorRow" id="catselector"><img src="/assets/grizabelapreview.jpg" id="catpreview"></div>
+          <div id="rightarrowbox"><img src="/assets/rightarrow.png" id="rightarrow"></div>
+            <div id = "leftarrowboxbg"><img src="/assets/rightarrow.png" id="leftarrowbg" ></div>
+      <div class="unlockSelectorRow" id="bgselector"><img src="/assets/bgpreview.jpg" id="bgpreview"></div>
+            <div id="rightarrowboxbg"><img src="/assets/rightarrow.png" id="rightarrowbg"></div>
+  </div>
   <div id="menutext">
       <h2> SELECT A CAT </h2>
       <h2> SELECT A BACKGROUND </h2>
@@ -35,14 +34,15 @@
   <div id="mainmenubutton" class="noselect" >MENU</div>
 </div>
   <div id="achievements">
-    <div id="notification-achievement">
-    </div>
+    <!-- <div id="achievement-get">
+      Achievement Unlocked!
+    </div> -->
       <div>
     <div id= "kittyaccessories">
         <!-- <img src='/assets/shades.png' id='shades'> -->
     </div>
     <div id="mainkitty">
-      <img alt="kitty" src="/assets/grizabela.jpg" id="mainclick" width="500px" height="350px">
+      <img alt="kitty" src="/assets/grizabela.png" id="mainclick" width="500px" height="350px">
     </div>
   </div>
     <div id="buttongrid">
@@ -96,22 +96,22 @@
               <br>
               <div id="laser-count2"> Laser Pointers: 0 </div>
       </div>
-      <div class ="grid item" id="grid6" name="scratch loadbar">
+      <div class ="grid item" id="gridScratch" name="scratch loadbar" class="loadbarMobile">
           <div id='scratchProgress'>
              <div id="scratchBar"></div>
           </div>
       </div>
-      <div class ="grid item" id="grid7" name="catnip loadbar">
+      <div class ="grid item" id="gridCatnip" name="catnip loadbar" class="loadbarMobile">
          <div id="catnipProgress">
           <div id="catnipBar"></div>
         </div>
       </div>
-      <div class ="grid item" id="grid8" name="yarnball loadbar">
+      <div class ="grid item" id="gridYarnball" name="yarnball loadbar" class="loadbarMobile">
           <div id="yarnballProgress">
           <div id="yarnballBar"></div>
         </div>
       </div>
-    <div id="grid15" name="laser loadbar">
+    <div id="gridlaser" name="laser loadbar" class="loadbarMobile">
          <div id="laserProgress">
           <div id="laserBar"></div>
         </div>
@@ -172,15 +172,16 @@
          <div id="neko-count1"> Lucky Nekos: 0 </div>
     </div>
 </div>
+<div id="numberGenerator"> </div>
 <div id="numberbox">
 
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script>
 
-</script>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/main.js" charset="utf-8"></script>
 <script src="/js/cats.js" charset="utf-8"></script>
 

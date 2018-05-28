@@ -17,6 +17,15 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
   font-size: 1.6vw;
+  background-size: cover;
+}
+
+#achievement-get{
+  background-color: none;
+  color: green;
+  position: fixed;
+  margin-left: 35%;
+
 }
 #mainmenubutton{
   width: 10%;
@@ -30,6 +39,16 @@ body {
   position: fixed;
 
 }
+
+#numberGenerator {
+  /* border: 2px solid black; */
+  position: fixed;
+  width: 50%;
+  margin-left: 0%;
+  margin-top: 28%;
+}
+
+
 #tester{
   background-color:white;
 }
@@ -60,72 +79,66 @@ body {
   z-index:10;
 }
 
-#kittypreview {
-  display: fixed;
-  background-color: white;
+.unlockSelectorRow{
+  border: 2px solid white;
   height: 100px;
   width: 100px;
-  margin-left: 68%;
+  padding: 10px;
   margin-top: 5%;
-}
-
-#backgroundpreview {
-  display: fixed;
-  background-color: lightblue;
-  height: 100px;
-  width: 100px;
-  margin-top: 5%;
-  margin-left: 68%;
-}
-
-#leftarrows {
-position: fixed;
-display: flex;
-margin-top: -23%;
-flex-direction: column;
-margin-left: 33%;
-}
-
-#leftarrowcat{
-background-color: yellow;
-border: 2px solid black;
-height: 50px;
-width: 50px;
-display: flex;
-margin-bottom: 125%;
-
-}
-
-#leftarrowbg{
-background-color: yellow;
-border: 2px solid black;
-height: 50px;
-width: 50px;
-}
-
-#rightarrows{
   position: fixed;
-  display: flex;
-  margin-top: -29%;
-  flex-direction: column;
-  margin-left: 53%;
 }
 
-#rightarrowcat{
-  background-color: red;
-  border: 2px solid black;
-  height: 50px;
-  width: 50px;
-  margin-bottom: 125%;
-  margin-top: 100%;
+#catselector {
+  margin-left: 36%;
+  background-color: white;
+  margin-top: -3%;
+  position: fixed;
+  opacity: 1.0;
 }
 
-#rightarrowbg{
-  background-color: red;
-  border: 2px solid black;
-  height: 50px;
-  width: 50px;
+#catpreview {
+  opacity: 1;
 }
+
+#bgselector {
+  margin-left: 36%;
+  margin-top: 15%;
+}
+#rightarrow {
+ width: 10%;
+ margin-left: 50%;
+ margin-top: 0%;
+ opacity: 1.0;
+position: fixed;
+
+}
+
+#rightarrowbg {
+ width: 10%;
+ margin-left: 50%;
+ margin-top: 18%;
+ opacity: 1.0;
+position: fixed;
+
+}
+#leftarrowbg {
+  width: 10%;
+  margin-left: 25.5%;
+  margin-top: 18%;
+  opacity: 1.0;
+  transform: rotate(180deg);
+position: fixed;
+}
+
+
+#leftarrow {
+  width: 10%;
+  margin-left: 25.5%;
+  margin-top: 0%;
+  opacity: 1.0;
+  transform: rotate(180deg);
+position: fixed;
+  }
 
 #menutext {
   display: flex;
@@ -137,16 +150,27 @@ width: 50px;
 
 #titlebox {
   z-index:2;
-  background-color: white;
+
   width: 45%;
   margin-top: -2%;
 }
 
+#exitbutton {
+  border: 1px solid white;
+  margin-left: 93%;
+  margin-top: 2%;
+  font-size: 3vw;
+  text-align: center;
+  width: 5%;
+}
 
+#exitbutton:hover {
+  color: red;
+}
 #mainkitty {
   align-content: center;
   justify-content: center;
-  margin-top: 7%;
+  margin-top: 0%;
   margin-left: 0%;
   width: 75%;
   position: fixed;
@@ -217,7 +241,21 @@ width: 50px;
 
 }
 
+#buy-scratch{
+  background-color: #ffbb72
+}
 
+#buy-catnip{
+  background-color:#fcff7f
+}
+
+#buy-yarnball{
+  background-color:lightgreen;
+}
+
+#buy-laser{
+  background-color:#f29b85
+}
 #shades {
   width:25%;
   z-index: 7;
@@ -239,7 +277,7 @@ width: 50px;
 #scratchBar {
   width: 10%;
     height: 30px;
-    background-color: lightgreen;
+    background-color: #ffbb72;
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     color: white;
@@ -248,7 +286,7 @@ width: 50px;
 #catnipBar {
   width: 10%;
     height: 30px;
-    background-color: lightgreen;
+    background-color: #fcff7f;
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     color: white;
@@ -266,14 +304,14 @@ width: 50px;
 #laserBar {
   width: 10%;
     height: 30px;
-    background-color: lightgreen;
+    background-color: #f29b85;
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     color: white;
 }
 
 .costhighlight {
-  background-color: wheat;
+  background-color: white;
 }
 
 .removegridborder {
@@ -283,10 +321,18 @@ width: 50px;
 }
 
 .valuehighlight {
-  color: green;
+  color: #85a524;
 }
 
+.unlock {
+  font-weight: 900;
+  font-size: 3.5em;
+}
 
+.unlock .letter {
+  display: inline-block;
+  line-height: 1em;
+}
 
 /* mobile styling */
 @media only screen and (max-width: 415px) {
@@ -345,27 +391,57 @@ text-align: center;
       border: 1px solid black;
     }
 
-#grid8{
+#gridScratch{
+  display: none;
+    margin-left: -200%;
+    z-index: 3;
+    margin-top: -50%;
+
+    width:0.1;
+}
+
+#gridCatnip {
+  display: none;
+    margin-left: -200%;
+    z-index: 3;
+    margin-top: -40%;
+
+    width:0.1;
+}
+
+#gridYarnball {
+display: none;
+    margin-left: -200%;
+    z-index: 3;
+    margin-top: -50%;
+
+    width:0;
+}
+
+
+
+#gridLaser {
+  display: none;
+    margin-left: -200%;
+    z-index: 3;
+    margin-top: -50%;
+
+    width:0;
+}
+
+.loadbarMobile {
+display: grid;
+  margin-left: -200%;
+  z-index: 3;
+  margin-top: -50%;
+
+  width:0;
   display: none;
 }
 
-#grid7 {
-  display: none;
+h1 {
+  margin-left: 10%;
 }
-
-#grid6 {
-  display: none;
-}
-
-#grid5 {
-  display: none;
-}
-
-#grid15 {
-  display: none
-}
-}
-
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

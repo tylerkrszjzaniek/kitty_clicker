@@ -1,8 +1,8 @@
-# Kitty Clicker v 0.07!
+# Kitty Clicker v 0.8!
 
 ## About:
 
-Welcome to my second independent project! Kitty Clicker is a simple game where the goal is to increase a number as high as possible. Can you reach 1,000,000 kitties?
+Welcome to my second independent project! Kitty Clicker is a simple game where the goal is to increase a number as high as possible. Can you reach 100,000,000 kitties?
 
 ##### Features:
 
@@ -34,6 +34,12 @@ Currently only three of the eight buttons are working
   + 5/21:
     + Added commas to large numbers
     + Began working on menu button (disabled on mobile)
+
+  + 5/27:
+    + Began achievement features, several new cats available, several backgrounds available
+    + Color-coded incremental Buttons
+    + Menu feature improved (not added on mobile)
+    + Style Improvements
 ###### Future Updates:
 
 
@@ -45,6 +51,7 @@ Currently only three of the eight buttons are working
 
 + Bugfixes
   + Fix loadbar bug where it glitches before second instance
+  + menu buttons not working properly
 
 + Balancing
 
