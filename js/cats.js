@@ -39,12 +39,18 @@ var kittyPreviewImages = [
 var backgroundPreviewImages = [
     "assets/bgpreview.jpg",
     "assets/spacepreview.jpg",
-    "assets/grammpreview.jpg"
+    "assets/grammpreview.jpg",
+    "assets/cuttingboardpreview.jpg"
 ];
 
 var backgroundImages = [
     "assets/spacebg.jpg",
-    "assets/grammaslap.jpg"
+    "assets/grammaslap.jpg",
+    "assets/cuttingboard.jpg"
+];
+
+var achievementText = [
+    "Costumes and backgrounds available in menu!"
 ];
 
 document.getElementById( "mainclick" ).addEventListener( "click",
@@ -55,6 +61,15 @@ document.getElementById( "mainclick" ).addEventListener( "click",
         }
         else{
             achievementUnlocked = false;
+        }
+        if( clickCount === 1 ){
+            document.getElementById( "achievement-get" ).style.display = "block";
+            document.getElementById( "achievement-subtext" ).textContent = achievementText[0];
+            setTimeout( function achievementTimeout(){
+                document.getElementById( "achievement-get" ).style.display = "none";
+                document.getElementById( "achievement-subtext" ).textContent = achievementText[0];
+                document.getElementById( "achievement-subtext" ).style.display = "none";
+            }, 5000 );
         }
     }
 );
@@ -131,12 +146,18 @@ document.getElementById( "leftarrow" ).addEventListener( "click",
 document.getElementById( "rightarrowbg" ).addEventListener( "click",
     function changeBgRight(){
         previewBgValue++;
-        if( achievementUnlocked === true && previewBgValue < 3 ){
+        if( achievementUnlocked === true && previewBgValue < 4 ){
             document.getElementById( "bgpreview" ).src = backgroundPreviewImages[previewBgValue];
             document.querySelector( "body" ).style.backgroundImage = "url(" + backgroundImages[previewBgValue - 1] + ")";
         }
         else{
             ( previewBgValue-- );
+        }
+        if( previewBgValue === 1 ){
+            document.getElementById( "titlebox" ).style.color = "white";
+        }
+        else{
+            document.getElementById( "titlebox" ).style.color = "black";
         }
     }
 );
@@ -151,7 +172,14 @@ document.getElementById( "leftarrowbg" ).addEventListener( "click",
         else{
             ( previewBgValue++ );
         }
+        if( previewBgValue === 1 ){
+            document.getElementById( "titlebox" ).style.color = "white";
+        }
+        else{
+            document.getElementById( "titlebox" ).style.color = "black";
+        }
     }
+
 );
 
 

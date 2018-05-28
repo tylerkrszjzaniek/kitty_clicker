@@ -13,16 +13,23 @@
 </head>
 <body>
   <div id="menudisplay">
-      <div id="exitbutton"> X </div>
+      <div id="exitbutton"> CLOSE </div>
+
     <div id = "leftarrowbox"><img src="/assets/rightarrow.png" id="leftarrow" ></div>
       <div class="unlockSelectorRow" id="catselector"><img src="/assets/grizabelapreview.jpg" id="catpreview"></div>
           <div id="rightarrowbox"><img src="/assets/rightarrow.png" id="rightarrow"></div>
             <div id = "leftarrowboxbg"><img src="/assets/rightarrow.png" id="leftarrowbg" ></div>
       <div class="unlockSelectorRow" id="bgselector"><img src="/assets/bgpreview.jpg" id="bgpreview"></div>
             <div id="rightarrowboxbg"><img src="/assets/rightarrow.png" id="rightarrowbg"></div>
+            <div id="kittyHeader">
+            SELECT A KITTY
+          </div>
+          <div id= "bgHeader">
+            SELECT A BACKGROUND
+          </div>
   </div>
-  
-  </div>
+
+
     <div id="titlebox">
         <img src="/assets/super.gif">
         <h1> KITTY CLICKER </h1>
@@ -31,9 +38,13 @@
   <div id="mainmenubutton" class="noselect" >MENU</div>
 </div>
   <div id="achievements">
-    <!-- <div id="achievement-get">
+    <div id="achievement-get">
       Achievement Unlocked!
-    </div> -->
+    </div>
+    <div id="achievement-subtext">
+
+  </div>
+  </div>
       <div>
     <div id= "kittyaccessories">
         <!-- <img src='/assets/shades.png' id='shades'> -->
@@ -47,12 +58,13 @@
       <div class="griditem" id="buy-scratch">
 
         Scratching Posts
-        <img src="assets/scratchingpost.jpg"  name="increase by 1 ea sec">
+        <img src="assets/scratchingpost.jpg"  name="increase by 1 ea sec" id="scratch-image">
 
 
           <div id="scratch-count" class="valuehighlight">+ 1</div> kitties per second
           <br>
             <br>
+
           <div id="scratch-cost" class="costhighlight"> Cost: 25 </div>
             <br>
           <div id="scratch-post-count"> Scratching Posts: 0 </div>
@@ -93,17 +105,17 @@
               <br>
               <div id="laser-count2"> Laser Pointers: 0 </div>
       </div>
-      <div class ="grid item" id="gridScratch" name="scratch loadbar" class="loadbarMobile">
+      <div class ="griditem" id="gridScratch" name="scratch loadbar" class="loadbarMobile">
           <div id='scratchProgress'>
              <div id="scratchBar"></div>
           </div>
       </div>
-      <div class ="grid item" id="gridCatnip" name="catnip loadbar" class="loadbarMobile">
+      <div class ="griditem" id="gridCatnip" name="catnip loadbar" class="loadbarMobile">
          <div id="catnipProgress">
           <div id="catnipBar"></div>
         </div>
       </div>
-      <div class ="grid item" id="gridYarnball" name="yarnball loadbar" class="loadbarMobile">
+      <div class ="griditem" id="gridYarnball" name="yarnball loadbar" class="loadbarMobile">
           <div id="yarnballProgress">
           <div id="yarnballBar"></div>
         </div>

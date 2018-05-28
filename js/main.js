@@ -15,18 +15,7 @@ var nekos = 0;
 var clickCount = 0; // stores total number of clicks made on main kitty
 var achievementStatus = false;
 
-// Achievements in progress
 
-// document.querySelector( "#mainclick" ).addEventListener( "click",
-//     function clickCounter(){
-//         clickCount++;
-//         if( clickCount >= 1 ){
-//             document.getElementById( "shades" ).style.display = "block";
-//             document.getElementById( "notification-achievement" ).textContent = "ACHIEVEMENT UNLOCKED" ;
-//         }
-//     }
-//
-// );
 // main kity click function
 document.querySelector( "#mainclick" ).addEventListener( "click", // increases kitties per click
     function kittyClick( ){
@@ -200,7 +189,7 @@ document.querySelector( "#buy-mouse" ).addEventListener( "click", // mouses mult
 document.querySelector( "#buy-tower" ).addEventListener( "click", // towers multiply scratching post values by 100
     function buyTower(){
         var towerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) ); // updates cost of future tower purchase
-        var nextTowerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) ); // updates cost of next tower
+
 
         if( kitties >= towerCost ){ // checks if user can afford to buy a tower
             towers++;
@@ -212,7 +201,7 @@ document.querySelector( "#buy-tower" ).addEventListener( "click", // towers mult
             document.querySelector( "#tower-cost" ).textContent = "Cost: " + ( towerCost ).toLocaleString( "en" ); // updates towercost
             document.querySelector( "#numberbox" ).textContent = ( kitties ).toLocaleString( "en" ); // updates kitty count
         }
-
+        var nextTowerCost = Math.floor( 500000 * Math.pow( 1.7, towers ) ); // updates cost of next tower
 
         document.getElementById( "tower-cost" ).textContent = "Cost: " + ( nextTowerCost ).toLocaleString( "en" );  // updates towercost
         if( towers > 0 ){
@@ -382,6 +371,11 @@ function moveLaser(){
         }
     }
 }
-
+if( scratches >= 100 ){
+    document.getElementById( "scratch-image" ).src = "/assets/scratchingpostgold.jpg";
+}
+else{
+    document.getElementById( "scratch-image" ).src = "/assets/scratchingpost.jpg";
+}
 
 document.getElementById( "numberbox" ).textContent = kitties.toLocaleString( "en" ); // adds commas to large numbers

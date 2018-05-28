@@ -38,8 +38,12 @@ Currently only three of the eight buttons are working
   + 5/27:
     + Began achievement features, several new cats available, several backgrounds available
     + Color-coded incremental Buttons
-    + Menu feature improved (not added on mobile)
+    + Menu feature improved
     + Style Improvements
+    + Bugfixes
+    + Code refactoring
+    + Mobile display improvements
+    + Added unlock menu to mobile
 ###### Future Updates:
 
 
@@ -51,7 +55,7 @@ Currently only three of the eight buttons are working
 
 + Bugfixes
   + Fix loadbar bug where it glitches before second instance
-  + menu buttons not working properly
+
 
 + Balancing
 
