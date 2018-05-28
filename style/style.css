@@ -18,7 +18,7 @@ body {
                                   supported by Chrome and Opera */
   font-size: 1.6vw;
   background-size: cover;
-  
+
 }
 
 #achievement-get{
@@ -179,7 +179,9 @@ position: fixed;
   cursor: pointer;
 }
 
-
+#mainclick {
+  width: 58%;
+}
 
 
 #input {
@@ -231,8 +233,8 @@ position: fixed;
   background-color: wheat;
   margin-left: 0%;
   margin-top: 30%;
-  font-size: 2em;
-  width: 86%;
+  font-size: 3em;
+  width: 100%;
   text-align: left;
   z-index: 2;
   position: fixed;
@@ -384,7 +386,9 @@ text-align: center;
       margin-top: -7%;
     }
 
-
+#mainclick {
+  width: 200%;
+}
 
     .griditem {
       font-size: 2vw;
